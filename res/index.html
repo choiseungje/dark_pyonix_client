@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FastAPI IDE</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+<!-- 좌측 디렉터리 업로드 -->
+<div id="toolbar-top">
+    <input id="dir-picker" type="file" webkitdirectory multiple />
+</div>
+
+<div id="container">
+    <!-- 사이드바 -->
+    <aside id="sidebar">
+        <div id="breadcrumb">/</div>
+        <ul id="file-tree"></ul>
+    </aside>
+
+    <!-- 에디터 패인 -->
+    <section id="editor-pane">
+        <!-- 탭바 -->
+        <div id="tab-bar"></div>
+
+        <!-- 툴바: 셀 추가 / 셀 실행 / 전체 실행 / 저장 -->
+        <div id="toolbar">
+            <button id="add-cell-btn" disabled>＋ Add Cell</button>
+            <button id="run-cell-btn" disabled>▷ Run Cell</button>
+            <button id="run-btn"      disabled>▶ Run All</button>
+            <button id="save-btn"     disabled>💾 Save</button>
+            <button id="shutdown-btn"    disabled>⏹ Stop Kernel</button>
+        </div>
+
+        <!-- 셀 단위 UI 컨테이너 -->
+        <div id="cells"></div>
+    </section>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

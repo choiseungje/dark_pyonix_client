@@ -1,0 +1,140 @@
+/* 기본 리셋 */
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { height:100%; font-family: 'Segoe UI', sans-serif; background:#1e1e1e; color:#ccc; }
+a { color:inherit; text-decoration:none; }
+
+/* 컨테이너 분할 */
+#container { display:flex; height:100vh; }
+
+/* 사이드바 */
+#sidebar {
+    width: 260px;
+    background: #252526;
+    border-right:1px solid #333;
+    overflow-y:auto;
+}
+#breadcrumb {
+    padding:10px 16px;
+    background:#2d2d2d;
+    font-size:14px;
+    border-bottom:1px solid #333;
+}
+#file-tree { list-style:none; }
+#file-tree li {
+    padding:6px 16px;
+    cursor:pointer;
+    transition: background 0.2s;
+}
+#file-tree li.dir { font-weight:bold; }
+#file-tree li:hover { background:#37373d; }
+#file-tree li.active { background:#0e639c; color:#fff; }
+
+/* 에디터 패인 */
+#editor-pane { flex:1; display:flex; flex-direction:column; }
+
+/* 탭바 */
+#tab-bar {
+    display:flex;
+    background:#2d2d2d;
+    border-bottom:1px solid #333;
+    overflow-x:auto;
+}
+#tab-bar .tab {
+    padding:8px 12px;
+    cursor:pointer;
+    color:#ccc;
+    border-right:1px solid #444;
+    transition: background 0.2s;
+    user-select:none;
+}
+#tab-bar .tab.active {
+    background:#1e1e1e;
+    color:#fff;
+    font-weight:500;
+}
+
+/* 툴바 */
+#toolbar {
+    display:flex;
+    align-items:center;
+    padding:6px 12px;
+    background:#1e1e1e;
+    border-bottom:1px solid #333;
+}
+#toolbar button {
+    margin-right:8px;
+    padding:4px 10px;
+    background:#0e639c;
+    border:none;
+    color:#fff;
+    border-radius:2px;
+    cursor:pointer;
+    font-size:13px;
+}
+#toolbar button:disabled {
+    background:#555;
+    cursor:default;
+}
+
+/* 에디터 */
+#editor {
+    flex:1;
+    width:100%;
+    padding:12px;
+    background:#1e1e1e;
+    color:#d4d4d4;
+    border:none;
+    font-family: 'Courier New', monospace;
+    font-size:14px;
+    line-height:1.5;
+    resize:none;
+}
+#editor:disabled { opacity:0.6; }
+
+/* 콘솔 출력 */
+#output {
+    height:150px;
+    padding:10px;
+    background:#1e1e1e;
+    color:#d4d4d4;
+    font-family: 'Courier New', monospace;
+    font-size:13px;
+    border-top:1px solid #333;
+    overflow-y:auto;
+}
+/* 셀 박스 */
+.cell {
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin: 8px 0;
+    padding: 8px;
+    background: #1e1e1e;
+}
+
+/* 셀 헤더(In [n]:) */
+.cell-header {
+    font-family: 'Courier New', monospace;
+    color: #0e639c;
+    margin-bottom: 4px;
+}
+
+/* 셀 편집기 */
+.cell-editor {
+    width: 100%;
+    height: 80px;
+    background: #252526;
+    color: #d4d4d4;
+    border: none;
+    resize: vertical;
+    margin-bottom: 4px;
+}
+
+/* 셀 출력 */
+.cell-output {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 4px;
+    overflow-x: auto;
+    min-height: 20px;
+}
+
